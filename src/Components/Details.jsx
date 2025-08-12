@@ -142,7 +142,7 @@ const Details = () => {
 
         {/* Back Button */}
         <button
-          onClick={() => navigate(-1)}
+          onClick={() => navigate('/')}
           className="btn btn-primary rounded-lg"
         >
           ← Back

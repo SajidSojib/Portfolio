@@ -4,6 +4,7 @@ import About from '../Components/About';
 import Skills from '../Components/Skills';
 import Contact from '../Components/Contact';
 import Projects from '../Components/Projects';
+import Footer from '../Components/Footer';
 const Home = () => {
     return (
         <div className='grad'>
@@ -12,6 +13,7 @@ const Home = () => {
             <Skills></Skills>
             <Projects></Projects>
             <Contact></Contact>
+            {/* <Footer></Footer> */}
         </div>
     );
 };

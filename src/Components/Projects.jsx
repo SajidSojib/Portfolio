@@ -69,7 +69,7 @@ const data = [
 
 const Projects = () => {
     return (
-      <div>
+      <div id='projects'>
         <h1 className="text-3xl font-bold text-center text-primary mb-6">
           My Projects
         </h1>

@@ -2,9 +2,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Spin as Hamburger } from "hamburger-react";
 import { motion } from "motion/react";
-import { Link, NavLink } from "react-router";
 import me from '../assets/me.png'
 import { toast } from "react-toastify";
+import { Link } from "react-scroll";
+
 const Navbar = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,7 +40,7 @@ const Navbar = () => {
         data-aos-once="true"
       >
         <Link
-          to="#banner"
+          to="banner"
           smooth={true}
           offset={-64}
           duration={500}
@@ -87,7 +88,7 @@ const Navbar = () => {
         <Link
           to="skills"
           smooth={true}
-          offset={-64}
+          offset={-80}
           duration={500}
           spy={true}
           exact="true"

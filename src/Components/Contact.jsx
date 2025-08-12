@@ -8,7 +8,7 @@ import { Link } from "react-router";
 const Contact = () => {
   return (
     // <div className="py-16 mx-auto lg:py-20 lg:pt-18 rounded-2xl ">
-    <div id="contact" className=" mx-auto mb-24 rounded-2xl ">
+    <div id="contact" className=" mx-auto rounded-2xl pb-16">
       <section className="">
         <h2 className="text-3xl font-bold text-primary text-center mb-4">
           Contact Me
@@ -69,7 +69,7 @@ const Contact = () => {
                 </div>
               </div>
               <h1 className="text-2xl font-bold">Get in touch</h1>
-              <p className="pt-2">Fill in the form to connect with us</p>
+              <p className="pt-2">Feel free to get in touch with me.</p>
             </div>
             <label className="block">
               <span className="mb-1 text-base-300">Full name</span>
@@ -150,10 +150,7 @@ const Contact = () => {
               ></textarea>
             </label>
             <button
-              data-aos="fade-down"
-              data-aos-delay="100"
-              data-aos-duration="1000"
-              data-aos-easing="ease-in-out"
+              
               type="submit"
               className="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 text-white btn btn-primary"
             >
