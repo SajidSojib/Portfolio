@@ -4,6 +4,7 @@ import { Spin as Hamburger } from "hamburger-react";
 import { motion } from "motion/react";
 import { Link, NavLink } from "react-router";
 import me from '../assets/me.png'
+import { toast } from "react-toastify";
 const Navbar = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,29 +18,7 @@ const Navbar = () => {
   //   console.log("User is logged in");
   // }
 
-  const [activeSection, setActiveSection] = useState("");
 
-  useEffect(() => {
-    const sections = document.querySelectorAll("section[id]");
-
-    const onScroll = () => {
-      let current = "";
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 64; // adjust for navbar height
-        const sectionHeight = section.clientHeight;
-        if (
-          window.scrollY >= sectionTop &&
-          window.scrollY < sectionTop + sectionHeight
-        ) {
-          current = section.getAttribute("id");
-        }
-      });
-      setActiveSection(current);
-    };
-
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     document.body.setAttribute("data-theme", theme);
@@ -60,16 +39,22 @@ const Navbar = () => {
         data-aos-easing="ease-in-out"
         data-aos-once="true"
       >
-        <a
-          href={"/"}
+        <Link
+          to="#banner"
+          smooth={true}
+          offset={-64}
+          duration={500}
+          spy={true}
+          exact="true"
+          activeClass="after:w-full"
+          className="relative p-2 block lg:p-0 font-medium tracking-wide transition-colors duration-300
+          after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:h-[2px] after:bg-primary after:w-0 after:transition-all after:duration-300 after:-translate-x-1/2
+          hover:after:w-full"
           aria-label="Home"
           title="Home"
-          className={`relative p-2 block lg:p-0 font-medium tracking-wide transition-colors duration-300
-       after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:h-[2px] after:bg-primary after:w-0 after:transition-all after:duration-300 after:-translate-x-1/2
-       ${activeSection ? "after:w-full" : "hover:after:w-full"}`}
         >
           Home
-        </a>
+        </Link>
       </li>
       <li
         data-aos="fade-down"
@@ -77,16 +62,22 @@ const Navbar = () => {
         data-aos-easing="ease-in-out"
         data-aos-once="true"
       >
-        <a
-          href={"#about"}
+        <Link
+          to="about"
+          smooth={true}
+          offset={-64}
+          duration={500}
+          spy={true}
+          exact="true"
+          activeClass="after:w-full"
+          className="relative p-2 block lg:p-0 font-medium tracking-wide transition-colors duration-300
+          after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:h-[2px] after:bg-primary after:w-0 after:transition-all after:duration-300 after:-translate-x-1/2
+          hover:after:w-full"
           aria-label="About"
           title="About"
-          className={`relative p-2 block lg:p-0 font-medium tracking-wide transition-colors duration-300
-       after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:h-[2px] after:bg-primary after:w-0 after:transition-all after:duration-300 after:-translate-x-1/2
-       ${activeSection ? "after:w-full" : "hover:after:w-full"}`}
         >
           About
-        </a>
+        </Link>
       </li>
       <li
         data-aos="fade-down"
@@ -94,16 +85,22 @@ const Navbar = () => {
         data-aos-easing="ease-in-out"
         data-aos-once="true"
       >
-        <a
-          href={"#skills"}
+        <Link
+          to="skills"
+          smooth={true}
+          offset={-64}
+          duration={500}
+          spy={true}
+          exact="true"
+          activeClass="after:w-full"
+          className="relative p-2 block lg:p-0 font-medium tracking-wide transition-colors duration-300
+          after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:h-[2px] after:bg-primary after:w-0 after:transition-all after:duration-300 after:-translate-x-1/2
+          hover:after:w-full"
           aria-label="Skills"
           title="Skills"
-          className={`relative p-2 block lg:p-0 font-medium tracking-wide transition-colors duration-300
-       after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:h-[2px] after:bg-primary after:w-0 after:transition-all after:duration-300 after:-translate-x-1/2
-       ${activeSection ? "after:w-full" : "hover:after:w-full"}`}
         >
           Skills
-        </a>
+        </Link>
       </li>
       <li
         data-aos="fade-down"
@@ -111,16 +108,22 @@ const Navbar = () => {
         data-aos-easing="ease-in-out"
         data-aos-once="true"
       >
-        <a
-          href={"#projects"}
+        <Link
+          to="projects"
+          smooth={true}
+          offset={-64}
+          duration={500}
+          spy={true}
+          exact="true"
+          activeClass="after:w-full"
+          className="relative p-2 block lg:p-0 font-medium tracking-wide transition-colors duration-300
+          after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:h-[2px] after:bg-primary after:w-0 after:transition-all after:duration-300 after:-translate-x-1/2
+          hover:after:w-full"
           aria-label="Projects"
           title="Projects"
-          className={`relative p-2 block lg:p-0 font-medium tracking-wide transition-colors duration-300
-       after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:h-[2px] after:bg-primary after:w-0 after:transition-all after:duration-300 after:-translate-x-1/2
-       ${activeSection ? "after:w-full" : "hover:after:w-full"}`}
         >
           Projects
-        </a>
+        </Link>
       </li>
       <li
         data-aos="fade-down"
@@ -128,16 +131,22 @@ const Navbar = () => {
         data-aos-easing="ease-in-out"
         data-aos-once="true"
       >
-        <a
-          href={"#contact"}
+        <Link
+          to="contact"
+          smooth={true}
+          offset={-64}
+          duration={500}
+          spy={true}
+          exact="true"
+          activeClass="after:w-full"
+          className="relative p-2 block lg:p-0 font-medium tracking-wide transition-colors duration-300
+          after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:h-[2px] after:bg-primary after:w-0 after:transition-all after:duration-300 after:-translate-x-1/2
+          hover:after:w-full"
           aria-label="Contact"
           title="Contact"
-          className={`relative p-2 block lg:p-0 font-medium tracking-wide transition-colors duration-300
-       after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:h-[2px] after:bg-primary after:w-0 after:transition-all after:duration-300 after:-translate-x-1/2
-       ${activeSection ? "after:w-full" : "hover:after:w-full"}`}
         >
           Contact
-        </a>
+        </Link>
       </li>
     </>
   );
@@ -179,6 +188,7 @@ const Navbar = () => {
       <li>
         <button
           className="hidden lg:flex btn btn-primary text-base-300"
+          onClick={()=>toast.warning("Under Development")}
         >
           Resume
         </button>
@@ -206,8 +216,8 @@ const Navbar = () => {
 
         {/* phone */}
         <div className="relative lg:hidden">
-          <div className="flex items-center">
-            <div className="">
+          <div className="flex text-primary items-center">
+            <div className="text-primary">
               <label className="swap swap-rotate">
                 {/* this hidden checkbox controls the state */}
                 <input
@@ -265,7 +275,7 @@ const Navbar = () => {
                   <div>
                     <h2 className="text-lg font-semibold">Sajid Ahmed Sojib</h2>
                     <span className="flex items-center space-x-1">
-                      <p className="text-xs hover:underline text-base-200">
+                      <p className="text-xs hover:underline text-gray-300">
                         sajidahmed2401@gmail.com
                       </p>
                     </span>

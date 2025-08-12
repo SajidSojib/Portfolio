@@ -1,9 +1,9 @@
 import React from 'react';
-import me from '../assets/me.png'
+import Banner from '../Components/Banner';
 const Home = () => {
     return (
-        <div className='text-2xl'>
-            <img src={me} alt="" />
+        <div className=''>
+            <Banner></Banner>
         </div>
     );
 };
