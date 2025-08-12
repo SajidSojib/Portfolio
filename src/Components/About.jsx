@@ -4,7 +4,7 @@ const About = () => {
     return (
       <div
         id="about"
-        className="px-4 mt-16 mb-24 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:mt-20 py-16"
+        className="px-4 mt-16 mb-24 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:mt-20 py-16 rounded-lg"
         style={{
           background:
             "linear-gradient(145deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.07))",

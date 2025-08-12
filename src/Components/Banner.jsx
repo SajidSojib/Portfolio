@@ -33,7 +33,7 @@ const Banner = () => {
                 />
               </span>
             </h1>
-            <p className="text-base xl:text-lg text-gray-400 tracking-wide mb-4">
+            <p className="text-base xl:text-lg text-white/80 tracking-wide mb-4">
               Full-Stack Developer specializing in React, Node.js, and MongoDB.
               I build performant, user-friendly web apps that solve real
               problems.

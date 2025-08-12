@@ -160,7 +160,7 @@ const Skills = () => {
                 draggable={false}
               />
               <span className="mt-3 font-semibold z-10">{title}</span>
-              <p className="text-center text-sm mt-1 text-white/90 z-10">
+              <p className="text-center text-sm mt-1 text-white/80 z-10">
                 {description}
               </p>
             </div>
