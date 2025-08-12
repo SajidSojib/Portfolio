@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import Home from './Pages/Home';
 import Root from './Layout/Root';
 import { ToastContainer } from 'react-toastify';
+import Details from './Components/Details';
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home></Home>
+      },
+      {
+        path: '/projects/:id',
+        Component: Details
       }
     ]
   },
