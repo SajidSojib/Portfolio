@@ -3,13 +3,14 @@ import React from 'react';
 const About = () => {
     return (
       <div
+        id="about"
         className="px-4 mt-16 mb-24 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:mt-20 py-16"
         style={{
           background:
             "linear-gradient(145deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.07))",
         }}
       >
-        <h1 className="text-4xl font-bold text-center text-primary mb-4">
+        <h1 className="text-4xl font-bold text-center text-primary mb-6">
           About Me
         </h1>
         <p className="text-lg">
