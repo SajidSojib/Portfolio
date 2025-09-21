@@ -5,7 +5,31 @@ import contactLottie from "../assets/contact-lottie.json";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 const Contact = () => {
+  const form = useRef();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const userID = import.meta.env.VITE_EMAILJS_USER_ID;
+
+    emailjs
+      .sendForm(serviceID, templateID, form.current, userID)
+      .then(
+        (result) => {
+          console.log(result.text);
+          toast.success("Message sent successfully!");
+        },
+        (error) => {
+          console.log(error);
+          toast.error("Failed to send message. Try again!");
+        }
+      );
+
+    e.target.reset();
+  }
   return (
     // <div className="py-16 mx-auto lg:py-20 lg:pt-18 rounded-2xl ">
     <div id="contact" className=" mx-auto rounded-2xl pb-16">
@@ -27,12 +51,10 @@ const Contact = () => {
           </div>
 
           <form
+            ref={form}
             noValidate=""
             className="flex flex-col py-6 space-y-6 md:py-0 md:px-6"
-            onSubmit={(e) => {
-              e.preventDefault();
-              toast.success("Message sent successfully");
-            }}
+            onSubmit={handleSubmit}
           >
             <div>
               <div>
@@ -98,6 +120,7 @@ const Contact = () => {
                 </svg>
                 <input
                   type="text"
+                  name="user_name"
                   required
                   placeholder="Username"
                   pattern="[A-Za-z][A-Za-z0-9\-]*"
@@ -132,7 +155,7 @@ const Contact = () => {
                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
                   </g>
                 </svg>
-                <input type="email" placeholder="Enter Email" required />
+                <input name="user_email" type="email" placeholder="Enter Email" required />
               </label>
             </label>
             <label
@@ -144,6 +167,7 @@ const Contact = () => {
             >
               <span className="mb-1">Message</span>
               <textarea
+                name="message"
                 rows="3"
                 className="block w-full rounded-md shadow-sm shadow-primary textarea border-none textarea-primary bg-info py-2 px-3"
                 placeholder="Your message"

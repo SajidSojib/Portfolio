@@ -183,12 +183,47 @@ const Navbar = () => {
       </li> */}
 
       <li>
-        <button
-          className="hidden lg:flex btn btn-primary text-base-300"
-          onClick={()=>toast.warning("Under Development")}
+        <label
+          htmlFor="resume_modal2"
+          className="flex btn btn-sm lg:btn-md btn-primary text-base-300"
         >
           Resume
-        </button>
+        </label>
+        {/* Resume Modal */}
+        <input type="checkbox" id="resume_modal2" className="modal-toggle" />
+        <div className="modal">
+          <div className="modal-box max-w-lg">
+            <h3 className="font-bold text-xl mb-4 text-primary">
+              Resume Options
+            </h3>
+            <p className="mb-6 text-white/80">
+              You can download or preview my resume below:
+            </p>
+            <div className="flex flex-col md:flex-row gap-4">
+              <a href="/resume.pdf" download className="btn btn-primary flex-1">
+                Download
+              </a>
+              <a
+                href={
+                  "https://drive.google.com/file/d/1Tk1UtOusU9Yv31aH7eby29JpCHehVw_N/view?usp=sharing"
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-outline flex-1"
+              >
+                View
+              </a>
+            </div>
+            <div className="modal-action">
+              <label
+                htmlFor="resume_modal2"
+                className="btn btn-accent text-white"
+              >
+                Close
+              </label>
+            </div>
+          </div>
+        </div>
       </li>
     </>
   );
@@ -242,6 +277,7 @@ const Navbar = () => {
                 </svg>
               </label>
             </div> */}
+            <ul>{link2}</ul>
             <Hamburger
               toggled={isMenuOpen}
               toggle={setIsMenuOpen}
